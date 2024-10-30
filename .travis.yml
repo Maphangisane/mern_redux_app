@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "node" # latest version
+  - "20"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+  - npm run build
+
+script:
+  - npm run test
+
+notifications:
+  email:
+    recipients:
+      - thabangh647+travisCI@gmail.com
+    on_success: always # options: `always`, `never`, or `change`
+    on_failure: never
