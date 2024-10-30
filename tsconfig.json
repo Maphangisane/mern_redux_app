@@ -14,7 +14,8 @@
 	},
 	"include": [
 		// "src/**/*.ts", // files in the src directory
-		"*.ts" // include TypeScript files in the root
+		"*.ts", // include TypeScript files in the root
+		"__tests__/**/*.ts" // include test files
 	],
 	"exclude": [
 		"node_modules"
