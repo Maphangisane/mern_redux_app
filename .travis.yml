@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - "18"
+  - "20"
+
+dist: jammy  # Use Ubuntu 22.04 (Jammy)
+os: linux
 
 cache:
   directories:
