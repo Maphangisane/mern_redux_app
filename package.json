@@ -1,0 +1,43 @@
+{
+	"name": "mern_redux_app",
+	"version": "1.0.0",
+	"description": "simple mern app with passport authentication and redux",
+	"main": "dist/server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node dist/server.js",
+		"server": "npm-run-all --parallel watch serve",
+		"build": "tsc",
+		"watch": "tsc --watch",
+		"serve": "nodemon --watch dist --ext js --exec node dist/server.js",
+		"clean": "rm -rf dist"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Maphangisane/mern_redux_app.git"
+	},
+	"author": "Thabang H",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Maphangisane/mern_redux_app/issues"
+	},
+	"homepage": "https://github.com/Maphangisane/mern_redux_app#readme",
+	"dependencies": {
+		"chalk": "^5.3.0",
+		"dotenv": "^16.4.5",
+		"express": "^4.21.1",
+		"mern_redux_app": "file:",
+		"mongoose": "^8.7.3",
+		"passport": "^0.7.0",
+		"passport-local": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.8.4",
+		"jest": "^29.7.0",
+		"nodemon": "^3.1.7",
+		"npm-run-all": "^4.1.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	}
+}
