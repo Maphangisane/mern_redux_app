@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "18"
+  - "node" # latest version
   - "20"
 
 dist: jammy  # Use Ubuntu 22.04 (Jammy)
@@ -22,4 +22,4 @@ notifications:
     recipients:
       - thabangh647+travisCI@gmail.com
     on_success: always # options: `always`, `never`, or `change`
-    on_failure: never
+    on_failure: always
