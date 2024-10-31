@@ -129,5 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Tests
+coverage/
+
 # My files
 practice_code/
