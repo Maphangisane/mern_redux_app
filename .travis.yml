@@ -22,4 +22,4 @@ notifications:
     recipients:
       - thabangh647+travisCI@gmail.com
     on_success: always # options: `always`, `never`, or `change`
-    on_failure: always
+    on_failure: never
