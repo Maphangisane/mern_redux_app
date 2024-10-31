@@ -1,19 +1,23 @@
 {
 	"name": "mern_redux_app",
 	"version": "1.0.0",
-	"description": "simple mern app with passport authentication and redux",
+	"description": "simple mern app with typescript, passport authentication and redux",
 	"main": "dist/server.js",
 	"type": "module",
 	"scripts": {
+		"dev": "ts-node server.ts",
+		"dev2": "nodemon --watch src --ext ts --exec ts-node server.ts",
 		"start": "node dist/server.js",
-		"server": "npm-run-all --parallel watch serve",
+		"server": "npm-run-all clean build --parallel watch serve",
 		"build": "tsc",
 		"watch": "tsc --watch",
 		"serve": "nodemon --watch dist --ext js --exec node dist/server.js",
 		"clean": "rm -rf dist",
-		"test": "jest",
-		"test:watch": "jest --watch",
-		"test:cov": "jest --coverage"
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"testc": "npm run clean && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"testwc": "npm run clean && node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+		"test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+		"test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
 	},
 	"repository": {
 		"type": "git",
@@ -27,12 +31,14 @@
 	"homepage": "https://github.com/Maphangisane/mern_redux_app#readme",
 	"dependencies": {
 		"chalk": "^5.3.0",
+		"cors": "^2.8.5",
 		"dotenv": "^16.4.5",
 		"express": "^4.21.1",
 		"express-session": "^1.18.1",
 		"express-validator": "^7.2.0",
 		"mern_redux_app": "file:",
 		"mongoose": "^8.7.3",
+		"morgan": "^1.10.0",
 		"passport": "^0.7.0",
 		"passport-discord": "^0.1.4",
 		"passport-github": "^1.1.0",
@@ -44,8 +50,10 @@
 	"devDependencies": {
 		"@babel/preset-env": "^7.26.0",
 		"@babel/preset-typescript": "^7.26.0",
+		"@types/cors": "^2.8.17",
 		"@types/express": "^5.0.0",
 		"@types/jest": "^29.5.14",
+		"@types/morgan": "^1.9.9",
 		"@types/node": "^22.8.4",
 		"@types/supertest": "^6.0.2",
 		"babel-jest": "^29.7.0",
@@ -55,6 +63,7 @@
 		"supertest": "^7.0.0",
 		"ts-jest": "^29.2.5",
 		"ts-node": "^10.9.2",
+		"tsconfig-paths": "^4.2.0",
 		"typescript": "^5.6.3"
 	}
 }
