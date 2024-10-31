@@ -1,11 +1,20 @@
 export default {
 	preset: 'ts-jest',
 	testEnvironment: 'node',
-	transform: {
-		// '^.+\\.ts$': 'ts-jest', // Use ts-jest to handle TypeScript files
-		'^.+\\.tsx?$': 'babel-jest', // Use Babel to handle TypeScript files
-		'^.+\\.js$': 'babel-jest', // Use Babel to handle JavaScript files
+	extensionsToTreatAsEsm: ['.ts'],
+	moduleNameMapper: {
+		'^(\\.{1,2}/.*)\\.js$': '$1',
 	},
+	transform: {
+		'^.+\\.tsx?$': [
+			'ts-jest',
+			{
+				useESM: true,
+			},
+		],
+	},
+	// testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
 	moduleFileExtensions: ['ts', 'js', 'json', 'node'],
-	testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+	testMatch: ['**/__tests__/**/*.test.ts'],  // Only match TypeScript test files
+	testPathIgnorePatterns: ['/node_modules/', '/dist/'],  // Ignore dist directory
 };
